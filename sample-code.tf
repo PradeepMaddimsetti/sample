@@ -10,3 +10,12 @@ resource "aws_vpc" "main" {
     Name = "lakshamanaraka"
   }
 }
+resource "aws_s3_bucket" "lakshmanbucket" {
+  bucket = "myluckey"
+  acl    = "public-read"
+
+  tags = {
+    Name        = "rama"
+    Environment = "Dev"
+  }
+}
