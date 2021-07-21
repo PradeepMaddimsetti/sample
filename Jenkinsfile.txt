@@ -1,8 +1,8 @@
 node {
-    stage(SCM-PROCESS) {
-        git branch: 'deploy', credentialsId: '077', url: 'https://github.com/Terraform-Learning/code_terraform.git'
+    stage('SCM-PROCESS') {
+        git 'https://github.com/PradeepMaddimsetti/sample.git'
     }
-    stage(BUILD-PROCESS) {
+    stage('BUILD-PROCESS') {
         sh ''' terraform init
         terraform apply -auto-approve
         aws s3 ls
