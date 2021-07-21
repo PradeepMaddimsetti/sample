@@ -1,11 +1,18 @@
-node {
-    stage('SCM-PROCESS') {
-        git branch: 'origin', url: 'https://github.com/PradeepMaddimsetti/sample.git'
-    }
-    stage('BUILD-PROCESS') {
-        sh ''' terraform init
-        terraform apply -auto-approve
-        aws s3 ls
-        aws s3 cp ./*.tfstate s3://myluckey'''
+pipeline {
+    agent any
+    stages {
+        stage('SCM-process') {
+            steps{
+                git branch: 'origin', url: 'https://github.com/PradeepMaddimsetti/sample.git'
+            }
+        stage('BUILD-process') {
+            steps{
+                sh ''' terraform init
+                terraform apply -auto-approve
+                aws s3 ls
+                aws s3 cp ./*.tfstate s3://myluckey'''
+            }
+
+        }
     }
 }
