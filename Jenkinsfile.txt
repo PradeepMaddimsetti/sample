@@ -1,6 +1,6 @@
 node {
     stage('SCM-PROCESS') {
-        git 'https://github.com/PradeepMaddimsetti/sample.git'
+        git branch: 'origin', url: 'https://github.com/PradeepMaddimsetti/sample.git'
     }
     stage('BUILD-PROCESS') {
         sh ''' terraform init
