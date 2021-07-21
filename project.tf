@@ -1,6 +1,6 @@
 provider "aws" {
   region  = "us-east-1"
-  profile = "rama"
+  profile = "customprofile"
 }
 resource "aws_vpc" "main" {
   cidr_block       = "10.10.0.0/16"
@@ -18,4 +18,4 @@ resource "aws_s3_bucket" "lakshmanbucket" {
     Name        = "rama"
     Environment = "Dev"
   }
-}
+} 
