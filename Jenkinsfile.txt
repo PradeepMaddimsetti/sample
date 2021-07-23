@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('SCM-process') {
             steps{
-                git branch: 'origin', url: 'https://github.com/PradeepMaddimsetti/sample.git'
+                git url: 'https://github.com/PradeepMaddimsetti/sample.git'
             }
         stage('BUILD-process') {
             steps{
